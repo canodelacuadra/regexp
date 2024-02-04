@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valdidar</title>
+</head>
+<body>
+<script src="data.js"></script>
+<script>
+const cadena = "Mi número de teléfono es 654321098 y también puedes llamarme al +34 912345678.";
+const expresionRegular = /(?:\+34\s?)?([6-9]\d{8})/g;
+const textoReemplazo = "**Número de teléfono no disponible**";
+const cadenaReemplazada = cadena.replace(expresionRegular, textoReemplazo);
+
+console.log(cadenaReemplazada);
+/*
+Explicación:
+
+(?:\+34\s?)?: Coincide con el prefijo de España (+34) seguido de un espacio en blanco (opcional).
+
+([6-9]\d{8}):
+
+[]: Indica un conjunto de caracteres.
+6-9: Rango de caracteres del 6 al 9.
+\d: Coincide con cualquier dígito decimal (0-9).
+{8}: Indica que el caracter anterior (en este caso, un dígito decimal) debe aparecer exactamente 8 veces.
+/g: Modificador global que indica que la expresión regular debe buscar todas las coincidencias en la cadena, no solo la primera.
+*/
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encotnrararr</title>
+</head>
+<body>
+<script src="data.js"></script>
+<script>
+const cadena = `
+  - archivo1.txt
+  - archivo_con_guion_bajo.pdf
+  - imagen.jpg
+  - 12345.png
+  - Carpeta/subcarpeta/archivo.mp4
+`;
+const expresionRegular = /([^\s/]+)\.[^\s/]+/g;
+const nombresArchivos = cadena.match(expresionRegular);
+
+console.log(nombresArchivos);
+/*
+<!-- 
+[]: Indica un conjunto de caracteres.
+^: Indica que el caracter siguiente no debe ser un espacio en blanco ni una barra diagonal (/).
++: Indica que el caracter anterior (en este caso, cualquier caracter que no sea un espacio en blanco ni una barra diagonal) puede aparecer una o más veces.
+\.: Coincide con un punto literal (.).
+
+[^\s/]+: Similar al primer grupo, pero coincide con cualquier caracter que no sea un espacio en blanco ni una barra diagonal.
+
+/g: Modificador global que indica que la expresión regular debe buscar todas las coincidencias en la cadena, no solo la primera.
+*/
+</script> 
+</body>
+</html>
